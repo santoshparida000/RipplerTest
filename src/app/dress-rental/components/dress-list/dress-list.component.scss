@@ -1,0 +1,84 @@
+.dress-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.dress-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px;
+  width: calc(100% / 3 - 40px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.dress-card:hover {
+  transform: scale(1.05);
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 350px; /* given fixed height as all images are not in same size  */
+  overflow: hidden;
+}
+
+.dress-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-container button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0; /* Initially hide the buttons */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.carousel-container:hover button {
+  opacity: 1; /* Show the buttons on hover */
+}
+
+.carousel-container button:nth-child(1) {
+  left: 10px;
+}
+
+.carousel-container button:nth-child(3) {
+  right: 10px;
+}
+
+.dress-info {
+  padding: 15px;
+}
+
+@media (max-width: 768px) {
+  .dress-card {
+    width: calc(100% / 2 - 30px);
+  }
+}
+
+@media (max-width: 480px) {
+  .dress-card {
+    width: calc(100% - 20px);
+  }
+}
+
+.clsRetailPrice{
+  height: 15px;
+}
+
+.clsBrandName{
+ color: #a8917f; 
+ font-size: large;
+}
+.clsDressName{
+  font-weight: bold;margin-left: 1%;font-size: large;
+}
+p{
+  margin-top: 2%;
+}

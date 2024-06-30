@@ -1,0 +1,25 @@
+<div class="dress-list">
+    <div class="dress-card" *ngFor="let dress of dresses">
+      <div class="carousel-container">
+        <button mat-icon-button (click)="prevImage(dress)">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <img [src]="dress.images[dress.currentImageIndex || 0]" alt="{{ dress.dressName }}" class="dress-image">
+        <button mat-icon-button (click)="nextImage(dress)">
+          <mat-icon>arrow_forward</mat-icon>
+        </button>
+      </div>
+      <div class="dress-info">
+        <span class="clsRetailPrice">RRP £{{ dress?.retailPrice }}</span>
+        <p>
+          <span class="clsBrandName">{{ dress?.brandName }}</span> 
+          <span class="clsDressName">{{ dress?.dressName }}</span> 
+        </p>
+        <p>Size {{ dress?.size }}</p>        
+        <p>£{{ dress?.rentalPrice }} Rental</p>
+      </div>
+    </div>    
+</div>
+<div *ngIf="!dresses || !dresses.length">No dresses available.</div>
+  
+  
